@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Zap, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import Logo from "../assets/images/logo.webp";
 
 export default function Footer() {
   return (
@@ -24,13 +25,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-voltage rounded-sm flex items-center justify-center">
-                <Zap className="w-5 h-5 text-obsidian" strokeWidth={3} />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading text-lg text-white tracking-tight">TEC ELECTRIC</span>
-                <span className="font-mono text-[9px] tracking-widest text-silver">LICENSED CONTRACTOR</span>
-              </div>
+              <img src={Logo} alt="TEC Electric logo" className="h-9 w-auto object-contain brightness-0 invert" />
+              
             </Link>
             <p className="text-silver text-sm leading-relaxed mb-6">
               A licensed general contracting firm with in-house engineering capabilities specializing in medium to large scale commercial and industrial projects.

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../assets/images/logo.webp";
 
 const services = [
   { label: "General Contracting", path: "/services/general-contracting" },
@@ -39,18 +40,16 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-obsidian/95 backdrop-blur-md border-b border-white/5" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md border-b border-white/5" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-voltage rounded-sm flex items-center justify-center">
-                <Zap className="w-5 h-5 text-obsidian" strokeWidth={3} />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading text-lg text-white tracking-tight">TEC ELECTRIC</span>
-                <span className="font-mono text-[9px] tracking-widest text-silver">LICENSED CONTRACTOR</span>
-              </div>
+              <img
+                src={Logo}
+                alt="TEC Electric logo"
+                className={`h-9 w-auto object-contain transition duration-300 ${scrolled ? "" : "brightness-0 invert"}`}
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -58,14 +57,14 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <div key={link.label} className="relative group">
                   {link.children ? (
-                    <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${location.pathname.startsWith("/services") ? "text-voltage" : "text-silver hover:text-white"}`}>
+                    <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${location.pathname.startsWith("/services") ? "text-voltage" : scrolled ? "text-obsidian hover:text-voltage" : "text-silver hover:text-white"}`}>
                       {link.label}
                       <ChevronDown className="w-3 h-3" />
                     </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === link.path ? "text-voltage" : "text-silver hover:text-white"}`}
+                      className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === link.path ? "text-voltage" : scrolled ? "text-obsidian hover:text-voltage" : "text-silver hover:text-white"}`}
                     >
                       {link.label}
                     </Link>
@@ -91,7 +90,7 @@ export default function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <a href="tel:7043945097" className="flex items-center gap-2 text-sm text-silver hover:text-white transition-colors">
+              <a href="tel:7043945097" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-obsidian hover:text-voltage" : "text-silver hover:text-white"}`}>
                 <Phone className="w-4 h-4" />
                 <span className="font-mono text-xs">704-394-5097</span>
               </a>
@@ -104,7 +103,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu toggle */}
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white p-2">
+            <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 transition-colors ${scrolled ? "text-obsidian" : "text-white"}`}>
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>

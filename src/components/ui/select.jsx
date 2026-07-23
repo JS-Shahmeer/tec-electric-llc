@@ -12,5 +12,5 @@ export function Select({ children, className = '', ...props }) {
 }
 
 export function SelectItem({ value, children }) {
-  return <option value={value}>{children}</option>
+  return <option value={value} className="text-black">{children}</option>
 }

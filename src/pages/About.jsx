@@ -1,192 +1,139 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
-import CTABanner from "@/components/CTABanner";
-import SectionLabel from "@/components/SectionLabel";
-import StatCard from "@/components/StatCard";
 import { motion } from "framer-motion";
-import { Shield, Award, Clock, Users, Target, Heart, Eye, Zap, ArrowRight } from "lucide-react";
+import { ShieldCheck, Target, HeartHandshake, Award, Crosshair, Eye } from "lucide-react";
+import PageHero from "@/components/shared/PageHero";
+import SectionHeading from "@/components/shared/SectionHeading";
+import CTABanner from "@/components/shared/CTABanner";
+import Certifications from "@/components/shared/Certifications";
+import TrustSignals from "@/components/shared/TrustSignals";
+import MetricsCounter from "@/components/shared/MetricsCounter";
+import { METRICS } from "@/lib/content";
+import { IMAGES } from "@/lib/images";
 
-const HERO = "https://media.base44.com/images/public/6a4ee06353a79fd19b867c4a/4d4a0ae94_generated_5d11db11.png";
-
-const values = [
-  { icon: Shield, title: "Safety", desc: "Safety is embedded in everything we do. Rigorous protocols protect our team and your investment." },
-  { icon: Award, title: "Quality", desc: "Our attention to detail and commitment to quality workmanship drives every project we undertake." },
-  { icon: Heart, title: "Community", desc: "We are community builders committed to enriching the communities we serve, one client at a time." },
-  { icon: Target, title: "Precision", desc: "In-house engineering capabilities ensure precision from design through final inspection." },
-  { icon: Eye, title: "Integrity", desc: "Transparent communication, honest pricing, and dependable delivery define our client relationships." },
-  { icon: Users, title: "Partnership", desc: "We view every project as a partnership, walking alongside our clients from concept to completion." },
+const VALUES = [
+  { icon: ShieldCheck, title: "Safety First", desc: "Documented protocols and continuous training keep every crew and site protected." },
+  { icon: Crosshair, title: "Precision", desc: "Engineering-led execution measured against code, spec, and schedule." },
+  { icon: HeartHandshake, title: "Partnership", desc: "We build relationships that outlast the projects we deliver." },
+  { icon: Award, title: "Quality", desc: "Multi-stage QA ensures work that performs for decades, not just at handover." },
 ];
 
-const leaders = [
-  {
-    name: "Larry Harris, PE",
-    title: "Owner and Managing Partner",
-    bio: "Mr. Harris founded TEC Electric and TEC Engineering in 2005 and 2006 respectively. Prior to TEC, he founded Harris Electronics, Inc — the first African American owned company to design and develop electronic production parts for Nissan North America. A graduate of UNC Charlotte with a BS in Electrical Engineering and an MBA from Georgia College, Mr. Harris is a registered Professional Engineer in NC, SC, and GA."
-  },
-  {
-    name: "Melanie Harris",
-    title: "VP of Operations",
-    bio: "Ms. Harris has been with TEC since 2018, managing the estimating division and supporting project management and accounting operations. A graduate of East Carolina University, she brings organizational excellence and attention to detail to every aspect of TEC's operational infrastructure."
-  },
-  {
-    name: "Felicia Silver",
-    title: "Operations Manager",
-    bio: "Mrs. Silver is a project manager with 20 years of experience in project management, validation, quality and safety. She has managed projects across pharmaceutical, medical device, and consumer health industries. A graduate of NC State University with a BS in Chemical Engineering, she brings extensive business development and quality control expertise."
-  },
+const PHILOSOPHY = [
+  { k: "Lead from the field", v: "Our project managers and field leaders work side by side with crews — decisions happen where the work happens." },
+  { k: "Communicate proactively", v: "Transparent, milestone-driven reporting means no surprises for owners or general contractors." },
+  { k: "Invest in people", v: "We train and promote from within because our people build our reputation on every site." },
+  { k: "Engineer the outcome", v: "Every engagement starts with load analysis, risk identification, and a plan built to protect your schedule." },
+];
+
+const SAFETY_STATS = [
+  { static: "1.2M+", l: "Safe Work Hours" },
+  { v: 99, s: "%", l: "Safety Rating" },
+  { v: 100, s: "%", l: "Crews Trained" },
 ];
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-obsidian">
-      <Navbar />
-      <PageHero
-        label="About Us"
-        title="BUILDING THE"
-        titleAccent="SOUTHEAST"
-        description="A leading minority-owned firm with expertise in general construction, electrical systems design, and electrical systems build-out since 2006."
-        image={HERO}
-      />
+    <>
+      <PageHero code="ABOUT TEC ELECTRIC" title="Powering commerce with precision and trust" subtitle="A commercial electrical and general contracting partner built on engineering rigor, a safety-first culture, and long-term relationships." image={IMAGES.fieldTeam} />
 
-      {/* Stats */}
-      <section className="bg-card border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/5">
-            <StatCard value="18" suffix="+" label="Years in Business" icon={Clock} />
-            <StatCard value="500" suffix="+" label="Projects Completed" icon={Award} />
-            <StatCard value="5" label="States Licensed" icon={Shield} />
-            <StatCard value="50" suffix="+" label="Team Members" icon={Users} />
+      {/* Mission & Vision */}
+      <section className="bg-carbon py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="border border-white/10 p-8 md:p-10 hover:border-amber/50 transition-colors">
+            <Target className="w-10 h-10 text-amber" />
+            <h2 className="font-display font-bold text-white text-2xl md:text-3xl mt-6">Our Mission</h2>
+            <p className="text-galvanized text-lg mt-4 leading-relaxed">To deliver engineering-grade electrical and general contracting that keeps commerce running — on time, on budget, and built to code — while protecting every crew and client we serve.</p>
           </div>
-        </div>
-      </section>
-
-      {/* Company Story */}
-      <section className="py-24 lg:py-32 bg-obsidian">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <SectionLabel number="01" text="Our Story" />
-              <h2 className="font-heading text-3xl md:text-4xl text-white uppercase mb-6">
-                FROM STARTUP TO<br /><span className="text-voltage">REGIONAL LEADER</span>
-              </h2>
-              <p className="text-silver leading-relaxed mb-6">
-                TEC Electric, LLC was formed in 2006 with offices located in Charlotte, NC. We provide general contracting services as well as self-perform all electrical, lighting, network, and security system installation services for customers throughout the Carolinas, Georgia, Virginia, Alabama, and Tennessee.
-              </p>
-              <p className="text-silver leading-relaxed mb-6">
-                Currently, TEC has 50 employees consisting of corporate, field operations, engineering, and business development professionals. We self-perform all technology systems except fire alarm, lightning protection, and life safety systems.
-              </p>
-              <p className="text-silver leading-relaxed">
-                We are a leading minority-owned firm with expertise in the areas of general construction, electrical systems design and electrical systems build-out. We specialize in both redesign and ground-up projects. Our success is driven by our attention to detail, quality, and safety.
-              </p>
-            </div>
-            <div>
-              <SectionLabel number="02" text="Mission" />
-              <div className="bg-card border border-white/5 p-8 lg:p-10 mb-8">
-                <h3 className="font-heading text-2xl text-white uppercase mb-4">OUR MISSION</h3>
-                <p className="text-silver leading-relaxed text-lg">
-                  To help our clients build strong communities that support a healthy environment as well as efficient use of resources — delivering dependable commercial solutions that keep businesses operational and communities thriving.
-                </p>
-              </div>
-              <div className="bg-card border border-voltage/20 p-8 lg:p-10">
-                <span className="spec-label block mb-3">[ Certifications ]</span>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2 text-white text-sm">
-                    <Zap className="w-4 h-4 text-voltage" /> Unlimited Electrical Contracting — NC, SC, VA, GA, TN
-                  </li>
-                  <li className="flex items-center gap-2 text-white text-sm">
-                    <Zap className="w-4 h-4 text-voltage" /> Unlimited General Contracting — NC, SC
-                  </li>
-                  <li className="flex items-center gap-2 text-white text-sm">
-                    <Zap className="w-4 h-4 text-voltage" /> Registered Engineering Services — NC, SC, GA
-                  </li>
-                  <li className="flex items-center gap-2 text-white text-sm">
-                    <Zap className="w-4 h-4 text-voltage" /> Minority-Owned Business Enterprise
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div className="border border-white/10 p-8 md:p-10 hover:border-amber/50 transition-colors">
+            <Eye className="w-10 h-10 text-amber" />
+            <h2 className="font-display font-bold text-white text-2xl md:text-3xl mt-6">Our Vision</h2>
+            <p className="text-galvanized text-lg mt-4 leading-relaxed">To be the most trusted commercial electrical partner in the region — the firm enterprise clients and general contractors call first when the work can't fail.</p>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionLabel number="03" text="Core Values" />
-          <h2 className="font-heading text-3xl md:text-4xl text-white uppercase mb-16">
-            WHAT DRIVES <span className="text-voltage">US</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
-            {values.map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card p-8 lg:p-10 group hover:bg-obsidian transition-colors"
-              >
-                <item.icon className="w-8 h-8 text-voltage mb-4" />
-                <h3 className="font-heading text-lg text-white uppercase mb-3">{item.title}</h3>
-                <p className="text-silver text-sm leading-relaxed">{item.desc}</p>
+      <section className="bg-neutral-950 border-y border-white/10 py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+          <SectionHeading align="center" code="CORE VALUES" title="The principles behind every project" subtitle="What we stand for — on every site, with every crew, for every client." />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+            {VALUES.map((v, i) => (
+              <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="border border-white/10 p-8 hover:border-amber transition-colors">
+                <div className="w-12 h-12 bg-amber flex items-center justify-center mb-5"><v.icon className="w-6 h-6 text-white" /></div>
+                <h3 className="font-display font-bold text-xl text-white">{v.title}</h3>
+                <p className="text-sm text-galvanized mt-3 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Leadership */}
-      <section className="py-24 lg:py-32 bg-obsidian">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionLabel number="04" text="Leadership" />
-          <h2 className="font-heading text-3xl md:text-4xl text-white uppercase mb-16">
-            OUR <span className="text-voltage">TEAM</span>
-          </h2>
-          <div className="space-y-px">
-            {leaders.map((person, i) => (
-              <motion.div
-                key={person.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-card border border-white/5 p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start"
-              >
+      {/* Leadership Philosophy */}
+      <section className="bg-carbon py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <SectionHeading code="LEADERSHIP PHILOSOPHY" title="How we run the work" />
+            <p className="text-galvanized text-lg mt-6 leading-relaxed">Great infrastructure is a leadership outcome. Our leaders set the standard on safety, communication, and quality — then hold the line in the field, every shift.</p>
+            <div className="mt-8 border-l-2 border-amber pl-6">
+              <p className="font-display text-xl text-white leading-snug">"We don't ask our crews to do anything we wouldn't do ourselves — safety first, every time."</p>
+              <p className="font-mono text-xs text-galvanized mt-4">— TEC ELECTRIC LEADERSHIP</p>
+            </div>
+          </div>
+          <div className="lg:col-span-7 space-y-px bg-white/10 border border-white/10">
+            {PHILOSOPHY.map((p, i) => (
+              <motion.div key={p.k} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-carbon p-6 md:p-8 flex gap-6">
+                <span className="font-mono text-amber text-sm shrink-0">0{i + 1}</span>
                 <div>
-                  <h3 className="font-heading text-xl text-white uppercase">{person.name}</h3>
-                  <span className="font-mono text-xs text-voltage tracking-wider uppercase">{person.title}</span>
+                  <h3 className="font-display font-bold text-white text-lg">{p.k}</h3>
+                  <p className="text-galvanized text-sm mt-2 leading-relaxed">{p.v}</p>
                 </div>
-                <p className="text-silver text-sm leading-relaxed lg:col-span-2">{person.bio}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Recruitment CTA */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionLabel number="05" text="Join Our Team" />
-          <h2 className="font-heading text-3xl md:text-4xl text-white uppercase mb-6">
-            BUILD YOUR CAREER<br /><span className="text-voltage">WITH TEC</span>
-          </h2>
-          <p className="text-silver text-lg max-w-2xl mx-auto mb-10">
-            We are committed to growing and developing a diverse and highly capable workforce. Join a team that values safety, quality, and professional growth.
-          </p>
-          <Link
-            to="/careers"
-            className="inline-flex items-center gap-2 bg-voltage text-obsidian px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-amber-400 transition-colors group"
-          >
-            Explore Careers
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+      {/* Commitment to Safety */}
+      <section className="bg-structural py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <SectionHeading light code="COMMITMENT TO SAFETY" title="Safety is non-negotiable" />
+            <p className="text-neutral-600 text-lg mt-6 leading-relaxed">Our safety-first culture is backed by documented protocols, OSHA-aligned training, and a track record of 1.2M+ safe work hours. Every field leader carries OSHA 30 certification, and we maintain the licensing, bonding, and insurance that owners and general contractors require.</p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              {["OSHA 30 Certified Field Leaders", "Licensed & Bonded", "Fully Insured", "EPA Compliant"].map((b) => (
+                <span key={b} className="flex items-center gap-2 border border-neutral-300 px-4 py-2 text-sm text-carbon font-medium"><ShieldCheck className="w-4 h-4 text-amber" /> {b}</span>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-px bg-neutral-200 border border-neutral-200">
+            {SAFETY_STATS.map((x) => (
+              <div key={x.l} className="bg-white p-6 md:p-8 text-center">
+                <div className="font-display font-bold text-amber text-3xl md:text-4xl">{x.static ? x.static : <MetricsCounter value={x.v} suffix={x.s} />}</div>
+                <div className="font-mono text-[11px] text-neutral-500 tracking-wider mt-2 uppercase">{x.l}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Metrics counters */}
+      <section className="relative bg-gradient-to-b from-royal to-carbon py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 blue-grid opacity-30" aria-hidden="true" />
+        <div className="relative max-w-[1400px] mx-auto px-5 md:px-10">
+          <SectionHeading align="center" code="COMPANY METRICS" title="Two decades of measurable impact" />
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-px bg-white/10 border border-white/10 mt-14">
+            {METRICS.map((m, i) => (
+              <motion.div key={m.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-carbon/60 p-6 md:p-8 text-center">
+                <div className="font-display font-bold text-amber text-4xl md:text-5xl"><MetricsCounter value={m.value} suffix={m.suffix} /></div>
+                <div className="font-mono text-[11px] text-galvanized tracking-wider mt-3 uppercase">{m.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Certifications />
+      <TrustSignals />
       <CTABanner />
-      <Footer />
-    </div>
+    </>
   );
 }

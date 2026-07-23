@@ -41,9 +41,13 @@ export default function Header() {
       )}
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-        <div className="flex h-[90px] items-center justify-between">
+        <div className="flex h-[105px] items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 focus-wire">
-            <img src={scrolled ? LogoDark : Logo} alt="TEC Electric LLC" className="w-auto h-16" />
+            <img
+              src={scrolled ? LogoDark : Logo}
+              alt="TEC Electric LLC"
+              className={cn("w-auto h-16", !scrolled && "brightness-0 invert")}
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

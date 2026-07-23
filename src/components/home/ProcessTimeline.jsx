@@ -29,7 +29,7 @@ export default function ProcessTimeline() {
                   {s.step}
                 </div>
                 <h3 className="font-display font-semibold text-white text-lg mt-5">{s.title}</h3>
-                <p className="text-sm text-galvanized mt-2 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-white mt-2 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>

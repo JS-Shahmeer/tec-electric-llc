@@ -24,7 +24,7 @@ export default function Subcontractor() {
             <motion.div key={w.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-white/10 p-8 hover:border-amber transition-colors">
               <w.icon className="w-9 h-9 text-amber" />
               <h3 className="font-display font-bold text-xl text-white mt-5">{w.title}</h3>
-              <p className="text-sm text-galvanized mt-3 leading-relaxed">{w.desc}</p>
+              <p className="text-sm text-white mt-3 leading-relaxed">{w.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -40,20 +40,20 @@ export default function Subcontractor() {
                   <div className="shrink-0 w-12 h-12 border border-amber flex items-center justify-center font-mono text-amber">{s.step}</div>
                   <div>
                     <h3 className="font-display font-bold text-white text-lg">{s.title}</h3>
-                    <p className="text-galvanized text-sm mt-2 leading-relaxed">{s.desc}</p>
+                    <p className="text-white text-sm mt-2 leading-relaxed">{s.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
             <div className="mt-10 border border-white/10 p-6 flex items-start gap-4">
               <ClipboardCheck className="w-6 h-6 text-amber shrink-0" />
-              <p className="text-galvanized text-sm leading-relaxed">Prequalification is free and takes about 10 minutes. Approved partners are added to our active bid list and onboarded into our safety and reporting systems.</p>
+              <p className="text-white text-sm leading-relaxed">Prequalification is free and takes about 10 minutes. Approved partners are added to our active bid list and onboarded into our safety and reporting systems.</p>
             </div>
           </div>
           <div className="lg:col-span-7">
             <div className="border border-white/10 bg-carbon p-8 md:p-10">
               <h3 className="font-display font-bold text-white text-2xl">Prequalification form</h3>
-              <p className="text-galvanized text-sm mt-2">Fields marked * are required.</p>
+              <p className="text-white text-sm mt-2">Fields marked * are required.</p>
               <div className="mt-8"><SubcontractorForm /></div>
             </div>
           </div>

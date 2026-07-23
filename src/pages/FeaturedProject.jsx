@@ -28,7 +28,7 @@ export default function FeaturedProjectPage() {
               <span className="font-mono text-xs tracking-[0.25em] text-amber">FEATURED PROJECT</span>
             </div>
             <h1 className="font-display font-bold text-white text-5xl md:text-7xl tracking-tight leading-[0.95] max-w-4xl">{p.title}</h1>
-            <p className="mt-6 text-lg md:text-xl text-galvanized max-w-2xl">Client: {p.client} · {p.location} · Completed {p.year}</p>
+            <p className="mt-6 text-lg md:text-xl text-white max-w-2xl">Client: {p.client} · {p.location} · Completed {p.year}</p>
           </motion.div>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function FeaturedProjectPage() {
             <div key={m.label} className="flex items-center gap-4">
               <div className="w-11 h-11 border border-white/15 flex items-center justify-center shrink-0"><m.icon className="w-5 h-5 text-amber" /></div>
               <div>
-                <div className="font-mono text-[10px] text-galvanized tracking-wider">{m.label.toUpperCase()}</div>
+                <div className="font-mono text-[10px] text-white tracking-wider">{m.label.toUpperCase()}</div>
                 <div className="text-white font-medium">{m.value}</div>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function FeaturedProjectPage() {
           <div className="lg:col-span-2">
             <span className="font-mono text-xs tracking-[0.2em] text-amber">PROJECT OVERVIEW</span>
             <h2 className="font-display font-bold text-white text-3xl md:text-4xl mt-4">Energizing a landmark mixed-use development</h2>
-            <p className="text-galvanized text-lg mt-6 leading-relaxed">{p.overview}</p>
+            <p className="text-white text-lg mt-6 leading-relaxed">{p.overview}</p>
             <h3 className="font-display font-bold text-white text-xl mt-12 mb-6">Scope of work</h3>
             <ul className="space-y-4">
               {p.scope.map((s) => (
@@ -67,7 +67,7 @@ export default function FeaturedProjectPage() {
             </div>
             <div className="mt-8 pt-8 border-t border-white/10">
               <h4 className="font-display font-bold text-white">Start a similar project</h4>
-              <p className="text-galvanized text-sm mt-2">Tell us about your scope and we'll respond within one business day.</p>
+              <p className="text-white text-sm mt-2">Tell us about your scope and we'll respond within one business day.</p>
               <AmberButton to="/contact" className="w-full mt-5" arrow>Request a Quote</AmberButton>
             </div>
           </aside>

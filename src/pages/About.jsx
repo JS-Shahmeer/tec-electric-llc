@@ -41,12 +41,12 @@ export default function About() {
           <div className="border border-white/10 p-8 md:p-10 hover:border-amber/50 transition-colors">
             <Target className="w-10 h-10 text-amber" />
             <h2 className="font-display font-bold text-white text-2xl md:text-3xl mt-6">Our Mission</h2>
-            <p className="text-galvanized text-lg mt-4 leading-relaxed">To deliver engineering-grade electrical and general contracting that keeps commerce running — on time, on budget, and built to code — while protecting every crew and client we serve.</p>
+            <p className="text-white text-lg mt-4 leading-relaxed">To deliver engineering-grade electrical and general contracting that keeps commerce running — on time, on budget, and built to code — while protecting every crew and client we serve.</p>
           </div>
           <div className="border border-white/10 p-8 md:p-10 hover:border-amber/50 transition-colors">
             <Eye className="w-10 h-10 text-amber" />
             <h2 className="font-display font-bold text-white text-2xl md:text-3xl mt-6">Our Vision</h2>
-            <p className="text-galvanized text-lg mt-4 leading-relaxed">To be the most trusted commercial electrical partner in the region — the firm enterprise clients and general contractors call first when the work can't fail.</p>
+            <p className="text-white text-lg mt-4 leading-relaxed">To be the most trusted commercial electrical partner in the region — the firm enterprise clients and general contractors call first when the work can't fail.</p>
           </div>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function About() {
               <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="border border-white/10 p-8 hover:border-amber transition-colors">
                 <div className="w-12 h-12 bg-amber flex items-center justify-center mb-5"><v.icon className="w-6 h-6 text-white" /></div>
                 <h3 className="font-display font-bold text-xl text-white">{v.title}</h3>
-                <p className="text-sm text-galvanized mt-3 leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-white mt-3 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -72,10 +72,10 @@ export default function About() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <SectionHeading code="LEADERSHIP PHILOSOPHY" title="How we run the work" />
-            <p className="text-galvanized text-lg mt-6 leading-relaxed">Great infrastructure is a leadership outcome. Our leaders set the standard on safety, communication, and quality — then hold the line in the field, every shift.</p>
+            <p className="text-white text-lg mt-6 leading-relaxed">Great infrastructure is a leadership outcome. Our leaders set the standard on safety, communication, and quality — then hold the line in the field, every shift.</p>
             <div className="mt-8 border-l-2 border-amber pl-6">
               <p className="font-display text-xl text-white leading-snug">"We don't ask our crews to do anything we wouldn't do ourselves — safety first, every time."</p>
-              <p className="font-mono text-xs text-galvanized mt-4">— TEC ELECTRIC LEADERSHIP</p>
+              <p className="font-mono text-xs text-white mt-4">— TEC ELECTRIC LEADERSHIP</p>
             </div>
           </div>
           <div className="lg:col-span-7 space-y-px bg-white/10 border border-white/10">
@@ -84,7 +84,7 @@ export default function About() {
                 <span className="font-mono text-amber text-sm shrink-0">0{i + 1}</span>
                 <div>
                   <h3 className="font-display font-bold text-white text-lg">{p.k}</h3>
-                  <p className="text-galvanized text-sm mt-2 leading-relaxed">{p.v}</p>
+                  <p className="text-white text-sm mt-2 leading-relaxed">{p.v}</p>
                 </div>
               </motion.div>
             ))}
@@ -124,7 +124,7 @@ export default function About() {
             {METRICS.map((m, i) => (
               <motion.div key={m.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-carbon/60 p-6 md:p-8 text-center">
                 <div className="font-display font-bold text-amber text-4xl md:text-5xl"><MetricsCounter value={m.value} suffix={m.suffix} /></div>
-                <div className="font-mono text-[11px] text-galvanized tracking-wider mt-3 uppercase">{m.label}</div>
+                <div className="font-mono text-[11px] text-white tracking-wider mt-3 uppercase">{m.label}</div>
               </motion.div>
             ))}
           </div>

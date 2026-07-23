@@ -5,6 +5,7 @@ import { NAV_LINKS, CAPABILITIES, COMPANY } from "@/lib/content";
 import AmberButton from "@/components/ui/AmberButton";
 import { cn } from "@/lib/utils";
 import Logo from "@/assets/images/logo-light.webp";
+import LogoDark from "@/assets/images/logo.webp";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,6 +13,9 @@ export default function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
+  const textColorClass = scrolled ? "text-carbon" : "text-white";
+  const borderColorClass = scrolled ? "border-black/10" : "border-white/10";
+  const mobilePanelClass = scrolled ? "bg-white border-black/10" : "bg-carbon border-white/10";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,13 +37,13 @@ export default function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 pt-[3px] transition-all duration-300 border-b",
-        scrolled ? "bg-carbon/80 backdrop-blur-xl border-white/10" : "bg-transparent border-transparent"
+        scrolled ? "bg-white/95 backdrop-blur-xl border-black/10" : "bg-transparent border-transparent"
       )}
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-        <div className="flex h-[77px] items-center justify-between">
+        <div className="flex h-[90px] items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 focus-wire">
-            <img src={Logo} alt="TEC Electric LLC" className="w-auto h-12" />
+            <img src={scrolled ? LogoDark : Logo} alt="TEC Electric LLC" className="w-auto h-16" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -48,7 +52,10 @@ export default function Header() {
                 <div key={link.label} className="relative" onMouseEnter={() => setMegaOpen(true)} onMouseLeave={() => setMegaOpen(false)}>
                   <Link
                     to={link.to}
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-galvanized hover:text-white transition-colors focus-wire"
+                    className={cn(
+                      "flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors focus-wire",
+                      scrolled ? "text-carbon hover:text-carbon" : "text-white hover:text-white"
+                    )}
                   >
                     {link.label} <ChevronDown className="w-3.5 h-3.5" />
                   </Link>
@@ -67,9 +74,9 @@ export default function Header() {
                             <div>
                               <div className="flex items-center gap-2">
                                 <span className="font-display font-semibold text-white text-sm">{cap.title}</span>
-                                <span className="font-mono text-[10px] text-galvanized">{cap.code}</span>
+                                <span className="font-mono text-[10px] text-white">{cap.code}</span>
                               </div>
-                              <p className="text-xs text-galvanized mt-1 line-clamp-2">{cap.description}</p>
+                              <p className="text-xs text-white mt-1 line-clamp-2">{cap.description}</p>
                             </div>
                           </Link>
                         ))}
@@ -83,7 +90,7 @@ export default function Header() {
                   to={link.to}
                   className={cn(
                     "px-4 py-2 text-sm font-medium transition-colors focus-wire",
-                    location.pathname === link.to ? "text-amber" : "text-galvanized hover:text-white"
+                    location.pathname === link.to ? "text-amber" : scrolled ? "text-carbon hover:text-carbon" : "text-white hover:text-white"
                   )}
                 >
                   {link.label}
@@ -98,7 +105,7 @@ export default function Header() {
 
           <button
             type="button"
-            className="lg:hidden text-white focus-wire p-2"
+            className={cn("lg:hidden focus-wire p-2", textColorClass)}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-label="Toggle menu"
@@ -109,11 +116,11 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden max-h-[calc(100dvh-80px)] overflow-y-auto bg-carbon border-t border-white/10 px-5 py-6 space-y-1">
+        <div className={cn("lg:hidden max-h-[calc(100dvh-80px)] overflow-y-auto border-t px-5 py-6 space-y-1", mobilePanelClass)}>
           {NAV_LINKS.map((link) => link.label === "Services" ? (
             <div key={link.label} className="border-b border-white/5">
               <div className="flex items-center justify-between">
-                <Link to={link.to} className="py-3 text-lg font-display font-medium text-white focus-wire">
+                <Link to={link.to} className={cn("py-3 text-lg font-display font-medium focus-wire", scrolled ? "text-carbon" : "text-white")}>
                   {link.label}
                 </Link>
                 <button
@@ -121,7 +128,7 @@ export default function Header() {
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   aria-expanded={mobileServicesOpen}
                   aria-label="Toggle Services submenu"
-                  className="p-3 text-galvanized focus-wire"
+                  className="p-3 text-white focus-wire"
                 >
                   <ChevronDown className={cn("w-5 h-5 transition-transform", mobileServicesOpen && "rotate-180")} />
                 </button>
@@ -132,7 +139,10 @@ export default function Header() {
                     <Link
                       key={cap.slug}
                       to={`/services/${cap.slug}`}
-                      className="flex items-center gap-2 py-2 text-sm text-galvanized hover:text-white focus-wire"
+                      className={cn(
+                        "flex items-center gap-2 py-2 text-sm focus-wire",
+                        scrolled ? "text-black hover:text-black" : "text-white hover:text-white"
+                      )}
                     >
                       <cap.icon className="h-4 w-4 shrink-0 text-amber" />
                       <span>{cap.title}</span>
@@ -145,7 +155,7 @@ export default function Header() {
             <Link
               key={link.label}
               to={link.to}
-              className="block py-3 text-lg font-display font-medium text-white border-b border-white/5 focus-wire"
+              className={cn("block py-3 text-lg font-display font-medium border-b focus-wire", textColorClass, scrolled ? "border-black/5" : "border-white/5")}
             >
               {link.label}
             </Link>
@@ -153,7 +163,7 @@ export default function Header() {
           <div className="pt-4">
             <AmberButton to="/contact" className="w-full" arrow>Request a Quote</AmberButton>
           </div>
-          <a href={COMPANY.phoneHref} className="block pt-3 font-mono text-sm text-galvanized">{COMPANY.phone}</a>
+          <a href={COMPANY.phoneHref} className={cn("block pt-3 font-mono text-sm", textColorClass)}>{COMPANY.phone}</a>
         </div>
       )}
     </header>

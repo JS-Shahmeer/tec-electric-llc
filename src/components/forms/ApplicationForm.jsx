@@ -66,13 +66,13 @@ export default function ApplicationForm() {
       <div className="border border-amber/40 bg-amber/5 p-10 text-center">
         <CheckCircle2 className="w-12 h-12 text-amber mx-auto" />
         <h3 className="font-display font-bold text-2xl text-white mt-5">Application received</h3>
-        <p className="text-galvanized mt-3">Thanks, {form.first_name}. Our team reviews every application and will be in touch.</p>
+        <p className="text-white mt-3">Thanks, {form.first_name}. Our team reviews every application and will be in touch.</p>
       </div>
     );
   }
 
-  const fieldCls = "block w-full bg-white/5 border-white/15 text-white placeholder:text-galvanized focus-visible:ring-amber h-12";
-  const labelCls = "text-galvanized font-mono text-xs tracking-wider";
+  const fieldCls = "block w-full bg-white/5 border-white/15 text-white placeholder:text-white focus-visible:ring-amber h-12";
+  const labelCls = "text-white font-mono text-xs tracking-wider";
 
   return (
     <form onSubmit={submit} className="space-y-5">
@@ -113,23 +113,23 @@ export default function ApplicationForm() {
           {uploading ? <Loader2 className="w-8 h-8 text-amber animate-spin" /> : <Upload className="w-8 h-8 text-amber" />}
           <div>
             <p className="text-white text-sm font-medium">{fileName || "Drag & drop your resume here"}</p>
-            <p className="text-galvanized text-xs mt-1">PDF, DOC, or DOCX — or click to browse</p>
+            <p className="text-white text-xs mt-1">PDF, DOC, or DOCX — or click to browse</p>
           </div>
           <input type="file" className="hidden" id="resume-upload" accept=".pdf,.doc,.docx" onChange={(e) => uploadFile(e.target.files?.[0])} />
           <label htmlFor="resume-upload" className="mt-2 font-mono text-xs text-amber border border-amber px-4 py-2 cursor-pointer hover:bg-amber hover:text-white transition-colors">CHOOSE FILE</label>
-          {fileName && <span className="flex items-center gap-2 text-xs text-galvanized"><FileText className="w-3.5 h-3.5" /> {fileName}</span>}
+          {fileName && <span className="flex items-center gap-2 text-xs text-white"><FileText className="w-3.5 h-3.5" /> {fileName}</span>}
         </div>
       </div>
 
       <div className="space-y-2">
         <Label className={labelCls}>MESSAGE (OPTIONAL)</Label>
-        <Textarea className="block w-full bg-white/5 border-white/15 text-white placeholder:text-galvanized focus-visible:ring-amber min-h-28" value={form.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us about yourself…" />
+        <Textarea className="block w-full bg-white/5 border-white/15 text-white placeholder:text-white focus-visible:ring-amber min-h-28" value={form.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us about yourself…" />
       </div>
       {error && <p className="text-destructive text-sm">{error}</p>}
       <AmberButton size="lg" arrow={status !== "loading"} disabled={status === "loading"} className="w-full sm:w-auto">
         {status === "loading" ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting…</> : "Submit Application"}
       </AmberButton>
-      <p className="font-mono text-xs text-galvanized">Submissions are reviewed by our HR team. You can also email {COMPANY.hr_email}.</p>
+      <p className="font-mono text-xs text-white">Submissions are reviewed by our HR team. You can also email {COMPANY.hr_email}.</p>
     </form>
   );
 }

@@ -29,7 +29,7 @@ export default function Projects() {
                 onClick={() => setFilter(f)}
                 className={cn(
                   "px-4 py-2 font-mono text-xs tracking-wider border transition-colors focus-wire",
-                  filter === f ? "bg-amber text-white border-amber" : "border-white/15 text-galvanized hover:text-white hover:border-white/40"
+                  filter === f ? "bg-amber text-white border-amber" : "border-white/15 text-white hover:text-white hover:border-white/40"
                 )}
               >
                 {f.toUpperCase()}
@@ -38,7 +38,7 @@ export default function Projects() {
           </div>
 
           {filtered.length === 0 ? (
-            <p className="text-galvanized text-center py-20">No projects in this category yet.</p>
+            <p className="text-white text-center py-20">No projects in this category yet.</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[380px]">
               {filtered.map((p) => <ProjectCard key={p.id} project={p} />)}

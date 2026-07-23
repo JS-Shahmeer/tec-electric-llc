@@ -21,7 +21,7 @@ export default function WhyChoose() {
             <div className="grid grid-cols-12 bg-carbon text-white">
               <div className="col-span-6 p-5 font-mono text-xs tracking-widest">DIFFERENTIATOR</div>
               <div className="col-span-3 p-5 font-mono text-xs tracking-widest text-amber border-l border-white/10">TEC ELECTRIC</div>
-              <div className="col-span-3 p-5 font-mono text-xs tracking-widest text-galvanized border-l border-white/10">TYPICAL FIRM</div>
+              <div className="col-span-3 p-5 font-mono text-xs tracking-widest text-white border-l border-white/10">TYPICAL FIRM</div>
             </div>
             {DIFFERENTIATORS.map((d, i) => (
               <motion.div

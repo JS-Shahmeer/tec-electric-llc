@@ -14,7 +14,7 @@ export default function SectionHeading({ code, title, subtitle, light = false, a
         {title}
       </h2>
       {subtitle && (
-        <p className={cn("mt-5 text-lg max-w-2xl", align === "center" && "mx-auto", light ? "text-neutral-600" : "text-galvanized")}>
+        <p className={cn("mt-5 text-lg max-w-2xl", align === "center" && "mx-auto", light ? "text-neutral-600" : "text-white")}>
           {subtitle}
         </p>
       )}

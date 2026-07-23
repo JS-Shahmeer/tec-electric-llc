@@ -54,13 +54,13 @@ export default function SubcontractorForm() {
       <div className="border border-amber/40 bg-amber/5 p-10 text-center">
         <CheckCircle2 className="w-12 h-12 text-amber mx-auto" />
         <h3 className="font-display font-bold text-2xl text-white mt-5">Prequalification submitted</h3>
-        <p className="text-galvanized mt-3">Thank you, {form.primary_contact}. Our procurement team will review your submission and be in touch.</p>
+        <p className="text-white mt-3">Thank you, {form.primary_contact}. Our procurement team will review your submission and be in touch.</p>
       </div>
     );
   }
 
-  const fieldCls = "block w-full bg-white/5 border-white/15 text-white placeholder:text-galvanized focus-visible:ring-amber h-12";
-  const labelCls = "text-galvanized font-mono text-xs tracking-wider";
+  const fieldCls = "block w-full bg-white/5 border-white/15 text-white placeholder:text-white focus-visible:ring-amber h-12";
+  const labelCls = "text-white font-mono text-xs tracking-wider";
 
   return (
     <form onSubmit={submit} className="space-y-5">
@@ -114,7 +114,7 @@ export default function SubcontractorForm() {
           {uploading ? <Loader2 className="w-8 h-8 text-amber animate-spin" /> : <Upload className="w-8 h-8 text-amber" />}
           <div>
             <p className="text-white text-sm font-medium">{fileName || "Drag & drop documents here"}</p>
-            <p className="text-galvanized text-xs mt-1">PDF, DOC, or image — or click to browse</p>
+            <p className="text-white text-xs mt-1">PDF, DOC, or image — or click to browse</p>
           </div>
           <input type="file" className="hidden" id="sub-upload" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" onChange={(e) => uploadFile(e.target.files?.[0])} />
           <label htmlFor="sub-upload" className="mt-2 font-mono text-xs text-amber border border-amber px-4 py-2 cursor-pointer hover:bg-amber hover:text-white transition-colors">CHOOSE FILE</label>
@@ -123,7 +123,7 @@ export default function SubcontractorForm() {
 
       <div className="space-y-2">
         <Label className={labelCls}>MESSAGE (OPTIONAL)</Label>
-        <Textarea className="block w-full bg-white/5 border-white/15 text-white placeholder:text-galvanized focus-visible:ring-amber min-h-24" value={form.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us about your capacity and capabilities…" />
+        <Textarea className="block w-full bg-white/5 border-white/15 text-white placeholder:text-white focus-visible:ring-amber min-h-24" value={form.message} onChange={(e) => set("message", e.target.value)} placeholder="Tell us about your capacity and capabilities…" />
       </div>
       {error && <p className="text-destructive text-sm">{error}</p>}
       <AmberButton size="lg" arrow={status !== "loading"} disabled={status === "loading"} className="w-full sm:w-auto">

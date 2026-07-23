@@ -19,12 +19,12 @@ export default function IndustryGrid({ light = false }) {
             light ? "border-neutral-200 hover:bg-white" : "border-white/10 hover:bg-white/5"
           )}
         >
-          <span className={cn("font-mono text-xs", light ? "text-neutral-400" : "text-galvanized")}>{String(i + 1).padStart(2, "0")}</span>
+          <span className={cn("font-mono text-xs", light ? "text-neutral-400" : "text-white")}>{String(i + 1).padStart(2, "0")}</span>
           <div className="flex items-center justify-between mt-4">
             <h3 className={cn("font-display font-semibold text-xl group-hover:text-amber transition-colors", light ? "text-carbon" : "text-white")}>{ind.name}</h3>
-            <ArrowUpRight className={cn("w-5 h-5 group-hover:text-amber transition-colors", light ? "text-neutral-400" : "text-galvanized")} />
+            <ArrowUpRight className={cn("w-5 h-5 group-hover:text-amber transition-colors", light ? "text-neutral-400" : "text-white")} />
           </div>
-          <p className={cn("text-sm mt-3 leading-relaxed", light ? "text-neutral-600" : "text-galvanized")}>{ind.desc}</p>
+          <p className={cn("text-sm mt-3 leading-relaxed", light ? "text-neutral-600" : "text-white")}>{ind.desc}</p>
         </motion.div>
       ))}
     </div>

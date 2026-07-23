@@ -26,12 +26,12 @@ export default function FeaturedProject() {
           <div className="flex flex-col justify-center">
             <span className="font-mono text-xs text-amber tracking-widest">CLIENT · {p.client.toUpperCase()}</span>
             <h3 className="font-display font-bold text-white text-3xl md:text-4xl mt-3 leading-tight">{p.title}</h3>
-            <p className="text-galvanized mt-5 leading-relaxed">{p.overview}</p>
+            <p className="text-white mt-5 leading-relaxed">{p.overview}</p>
             <div className="grid grid-cols-3 gap-4 mt-8 border-y border-white/10 py-6">
               {meta.map((m) => (
                 <div key={m.label}>
                   <m.icon className="w-5 h-5 text-amber mb-2" />
-                  <div className="font-mono text-[10px] text-galvanized tracking-wider">{m.label.toUpperCase()}</div>
+                  <div className="font-mono text-[10px] text-white tracking-wider">{m.label.toUpperCase()}</div>
                   <div className="text-white text-sm font-medium">{m.value}</div>
                 </div>
               ))}

@@ -21,12 +21,12 @@ export default function Certifications() {
                 </div>
                 <div className="font-mono text-xs text-amber tracking-widest">{c.abbr}</div>
                 <h3 className="font-display font-bold text-xl text-white mt-2">{c.name}</h3>
-                <p className="text-sm text-galvanized mt-4 leading-relaxed">{c.desc}</p>
+                <p className="text-sm text-white mt-4 leading-relaxed">{c.desc}</p>
               </motion.div>
             );
           })}
         </div>
-        <p className="text-center font-mono text-xs text-galvanized mt-8">Official certification logos will replace these badges once supplied.</p>
+        <p className="text-center font-mono text-xs text-white mt-8">Official certification logos will replace these badges once supplied.</p>
       </div>
     </section>
   );

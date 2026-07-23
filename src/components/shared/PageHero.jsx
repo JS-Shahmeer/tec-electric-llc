@@ -20,7 +20,7 @@ export default function PageHero({ code, title, subtitle, image, align = "left" 
           <h1 className="font-display font-bold text-white tracking-tight leading-[0.95] text-5xl md:text-7xl max-w-4xl">
             {title}
           </h1>
-          {subtitle && <p className={`mt-6 text-lg md:text-xl text-galvanized max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>{subtitle}</p>}
+          {subtitle && <p className={`mt-6 text-lg md:text-xl text-white max-w-2xl ${align === "center" ? "mx-auto" : ""}`}>{subtitle}</p>}
         </motion.div>
       </div>
     </section>

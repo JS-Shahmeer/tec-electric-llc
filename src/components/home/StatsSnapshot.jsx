@@ -19,7 +19,7 @@ export default function StatsSnapshot() {
               <div className="font-display font-bold text-amber text-4xl md:text-5xl tracking-tight">
                 <MetricsCounter value={m.value} suffix={m.suffix} />
               </div>
-              <div className="font-mono text-[11px] text-galvanized tracking-wider mt-3 uppercase">{m.label}</div>
+              <div className="font-mono text-[11px] text-white tracking-wider mt-3 uppercase">{m.label}</div>
             </motion.div>
           ))}
         </div>

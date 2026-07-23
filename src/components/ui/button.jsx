@@ -12,7 +12,7 @@ export function Button({ children, className = '', ...props }) {
 export default function AmberButton({ children, className = '', variant = 'primary', size = 'md', arrow = false, to, href, ...props }) {
   const base = 'inline-flex items-center justify-center rounded-full font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2'
   const variants = {
-    primary: 'bg-amber text-carbon hover:bg-amber/90',
+    primary: 'bg-amber text-white hover:bg-amber/90',
     dark: 'bg-carbon text-white border border-white/15 hover:bg-white hover:text-carbon',
     outline: 'border border-white/15 text-white hover:bg-white/5',
   }

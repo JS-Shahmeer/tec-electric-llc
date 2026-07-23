@@ -35,7 +35,7 @@ export default function Contact() {
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-white/15 flex items-center justify-center shrink-0"><item.icon className="w-5 h-5 text-amber" /></div>
                   <div>
-                    <div className="font-mono text-xs text-galvanized tracking-wider">{item.label.toUpperCase()}</div>
+                    <div className="font-mono text-xs text-white tracking-wider">{item.label.toUpperCase()}</div>
                     {item.href ? <a href={item.href} className="text-white hover:text-amber transition-colors focus-wire">{item.value}</a> : <p className="text-white">{item.value}</p>}
                   </div>
                 </div>
@@ -46,7 +46,7 @@ export default function Contact() {
               <h3 className="font-display font-bold text-xl text-white">Service areas</h3>
               <div className="flex flex-wrap gap-2 mt-5">
                 {SERVICE_AREAS.map((a) => (
-                  <span key={a} className="font-mono text-xs border border-white/15 text-galvanized px-3 py-1.5">{a}</span>
+                  <span key={a} className="font-mono text-xs border border-white/15 text-white px-3 py-1.5">{a}</span>
                 ))}
               </div>
             </div>

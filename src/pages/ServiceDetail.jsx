@@ -42,7 +42,7 @@ export default function ServiceDetail() {
           <div className="lg:col-span-2 space-y-10">
             <div>
               <SectionHeading code="OVERVIEW" title="What we deliver" />
-              <p className="text-galvanized text-lg mt-6 leading-relaxed">
+              <p className="text-white text-lg mt-6 leading-relaxed">
                 Our {cap.title.toLowerCase()} practice pairs disciplined project management with field crews who execute to spec. From initial load analysis through inspection and closeout, we own the outcome — so you get infrastructure that performs on day one and for the decades that follow.
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function ServiceDetail() {
 
           <aside className="border border-white/10 p-8 h-fit lg:sticky lg:top-28">
             <h3 className="font-display font-bold text-xl text-white">Start a conversation</h3>
-            <p className="text-galvanized text-sm mt-3">Tell us about your project and we'll respond within one business day.</p>
+            <p className="text-white text-sm mt-3">Tell us about your project and we'll respond within one business day.</p>
             <div className="mt-6 space-y-3">
               <AmberButton to="/contact" className="w-full" arrow>Request a Quote</AmberButton>
               <AmberButton to="/projects" variant="outline" className="w-full">See Our Work</AmberButton>
@@ -96,12 +96,12 @@ export default function ServiceDetail() {
                   <r.icon className="w-6 h-6 text-amber" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-white group-hover:text-amber transition-colors">{r.title}</h3>
-                <p className="text-sm text-galvanized mt-3 line-clamp-2">{r.description}</p>
+                <p className="text-sm text-white mt-3 line-clamp-2">{r.description}</p>
                 <span className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-amber">VIEW <ArrowRight className="w-3.5 h-3.5" /></span>
               </Link>
             ))}
           </div>
-          <Link to="/services" className="mt-12 inline-flex items-center gap-2 text-galvanized hover:text-white focus-wire">
+          <Link to="/services" className="mt-12 inline-flex items-center gap-2 text-white hover:text-white focus-wire">
             <ArrowLeft className="w-4 h-4" /> All Services
           </Link>
         </div>

@@ -38,7 +38,7 @@ export default function Services() {
                   <cap.icon className="w-6 h-6 text-amber" />
                 </div>
                 <h2 className="font-display font-bold text-3xl text-white">{cap.title}</h2>
-                <p className="text-galvanized mt-4 leading-relaxed">{cap.description}</p>
+                <p className="text-white mt-4 leading-relaxed">{cap.description}</p>
                 <div className="grid grid-cols-2 gap-3 mt-6">
                   {cap.benefits.map((b) => (
                     <span key={b} className="flex items-center gap-2 text-sm text-white/80"><Check className="w-4 h-4 text-amber shrink-0" /> {b}</span>

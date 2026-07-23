@@ -20,7 +20,7 @@ export default function Careers() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionHeading code="WHY WORK WITH TEC" title="Work on the projects that matter" />
-            <p className="text-galvanized text-lg mt-6 leading-relaxed">At TEC Electric you'll work on landmark commercial projects alongside seasoned professionals who hold the highest standards in the industry. We reward craftsmanship, back our people with real benefits, and give every team member a path forward.</p>
+            <p className="text-white text-lg mt-6 leading-relaxed">At TEC Electric you'll work on landmark commercial projects alongside seasoned professionals who hold the highest standards in the industry. We reward craftsmanship, back our people with real benefits, and give every team member a path forward.</p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <AmberButton href="#apply" arrow>Apply Now</AmberButton>
               <AmberButton href={`mailto:${COMPANY.hr_email}`} variant="outline">{COMPANY.hr_email}</AmberButton>
@@ -41,7 +41,7 @@ export default function Careers() {
                 <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="border border-white/10 p-8 hover:border-amber transition-colors">
                   <Icon className="w-8 h-8 text-amber" />
                   <h3 className="font-display font-bold text-xl text-white mt-5">{b.title}</h3>
-                  <p className="text-sm text-galvanized mt-3 leading-relaxed">{b.desc}</p>
+                  <p className="text-sm text-white mt-3 leading-relaxed">{b.desc}</p>
                 </motion.div>
               );
             })}
@@ -54,7 +54,7 @@ export default function Careers() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <SectionHeading code="COMPANY CULTURE" title="A team that has each other's backs" />
-            <p className="text-galvanized text-lg mt-6 leading-relaxed">Our culture is built on safety, mentorship, and respect. When you join TEC, you join a crew that's in it for the long term — and a company that invests in your growth.</p>
+            <p className="text-white text-lg mt-6 leading-relaxed">Our culture is built on safety, mentorship, and respect. When you join TEC, you join a crew that's in it for the long term — and a company that invests in your growth.</p>
             <div className="mt-8 border-l-2 border-amber pl-6">
               <Quote className="w-6 h-6 text-amber mb-2" />
               <p className="font-display text-xl text-white leading-snug">"We invest in our people because they build our reputation on every site."</p>

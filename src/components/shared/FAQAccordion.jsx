@@ -27,7 +27,7 @@ export default function FAQAccordion({ items }) {
               />
             </button>
             {isOpen && (
-              <div id={`faq-answer-${index}`} className="pb-7 pr-12 text-base leading-relaxed text-galvanized">
+              <div id={`faq-answer-${index}`} className="pb-7 pr-12 text-base leading-relaxed text-white">
                 {item.a}
               </div>
             )}

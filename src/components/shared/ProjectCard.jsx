@@ -116,13 +116,13 @@ export default function ProjectCard({ project, className }) {
 
       <div className="absolute top-4 left-4 flex items-center gap-2">
         {project.value && <span className="font-mono text-[10px] bg-amber text-white px-2 py-1">{project.value}</span>}
-        {project.year && <span className="font-mono text-[10px] bg-carbon/70 text-galvanized px-2 py-1 backdrop-blur">{project.year}</span>}
+        {project.year && <span className="font-mono text-[10px] bg-carbon/70 text-white px-2 py-1 backdrop-blur">{project.year}</span>}
       </div>
 
       <div className="relative z-10 flex flex-col justify-end h-full min-h-[340px] p-6">
         <span className="font-mono text-xs text-amber tracking-widest">{project.industry}</span>
         <h3 className="font-display font-bold text-white text-2xl mt-2 leading-tight">{project.title}</h3>
-        <div className="flex items-center gap-2 mt-2 text-galvanized text-sm">
+        <div className="flex items-center gap-2 mt-2 text-white text-sm">
           <MapPin className="w-3.5 h-3.5" /> {project.location}
         </div>
         {project.services?.length > 0 && (

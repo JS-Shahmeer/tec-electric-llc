@@ -15,7 +15,7 @@ export default function TestimonialsSection({ testimonials }) {
           />
           <div className="mt-10 grid grid-cols-3 gap-4 opacity-60">
             {["MERIDIAN", "NORTHPOINT", "VERTEX", "CIVIC", "ATLAS", "SUMMIT"].map((logo) => (
-              <div key={logo} className="border border-white/10 py-4 flex items-center justify-center font-mono text-[10px] text-galvanized tracking-widest">
+              <div key={logo} className="border border-white/10 py-4 flex items-center justify-center font-mono text-[10px] text-white tracking-widest">
                 {logo}
               </div>
             ))}

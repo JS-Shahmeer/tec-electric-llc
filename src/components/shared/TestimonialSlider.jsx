@@ -32,7 +32,7 @@ export default function TestimonialSlider({ testimonials }) {
             </div>
             <div>
               <div className="font-display font-semibold text-white">{t.author}</div>
-              <div className="text-sm text-galvanized">{t.role}{t.company ? ` · ${t.company}` : ""}</div>
+              <div className="text-sm text-white">{t.role}{t.company ? ` · ${t.company}` : ""}</div>
               {t.project_reference && <div className="font-mono text-xs text-amber mt-1">{t.project_reference}</div>}
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function TestimonialSlider({ testimonials }) {
         <button onClick={() => go(1)} aria-label="Next testimonial" className="w-11 h-11 border border-white/20 flex items-center justify-center text-white hover:border-amber hover:text-amber transition-colors focus-wire">
           <ChevronRight className="w-5 h-5" />
         </button>
-        <span className="font-mono text-sm text-galvanized ml-2">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
+        <span className="font-mono text-sm text-white ml-2">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span>
       </div>
     </div>
   );
